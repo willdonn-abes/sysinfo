@@ -1,4 +1,4 @@
-name: CI 05 - Make a Build
+name: CI 05 - Lint a project
 
 on: push
 
