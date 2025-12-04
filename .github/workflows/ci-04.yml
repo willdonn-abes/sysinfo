@@ -1,0 +1,11 @@
+name: CI 04 - Make a Build
+
+on: push
+
+jobs:
+  system-info-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1 - Build
+        run: make build
