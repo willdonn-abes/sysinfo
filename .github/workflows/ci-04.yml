@@ -3,7 +3,7 @@ name: CI 04 - Make a Build
 on: push
 
 jobs:
-  system-info-job:
+  build-python:
     runs-on: ubuntu-latest
 
     steps:

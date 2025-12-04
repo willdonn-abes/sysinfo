@@ -3,7 +3,7 @@ name: CI 05 - Make a Build
 on: push
 
 jobs:
-  system-info-job:
+  lint-pyhon:
     runs-on: ubuntu-latest
 
     steps:
