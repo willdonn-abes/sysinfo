@@ -1,0 +1,24 @@
+name: CI 04 - Make a Build
+
+on: push
+
+jobs:
+  system-info-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install ifaddr psutil pylint
+
+      - name: Run pylint
+        run: pylint --disable=missing-docstring script/mysystem/mysystem.py
