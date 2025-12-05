@@ -1,13 +1,11 @@
-name: CI 04 - Make a Build
-
+name: CI04 - sysinfo CI
 on: push
 
 jobs:
-  build-python:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6 
-      - name: Step 1 - Build
-        run: make build
+    C-ci-sysinfo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: sysinfo checkout
+              uses: actions/checkout@v6
+            - name: sysinfo compilation
+              run: make build
