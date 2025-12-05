@@ -1,14 +1,11 @@
 name: CI 08 - Build and Artifact
 
-on:
-  workflow_dispatch:
+on: push
 
 jobs:
   build:
     name: Compile C sources
     runs-on: ubuntu-latest
-    needs: c-lint
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
