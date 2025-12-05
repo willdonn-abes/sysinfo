@@ -18,8 +18,15 @@ jobs:
 
       - name: Build C project
         run: make build
-        
+
       - name: Generate build provenance attestation
         uses: actions/attest-build-provenance@v1
         with:
           subject-path: ./sysinfo
+
+      - name: Upload sysinfo binary artifact
+        uses: actions/upload-artifact@v5
+        with:
+          name: sysinfo-${{ github.sha }}
+          path: ./sysinfo
+          if-no-files-found: error
