@@ -1,0 +1,27 @@
+name: CI 08 - Build and Artifact
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Compile C sources
+    runs-on: ubuntu-latest
+    needs: c-lint
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Build C project
+        run: make
+
+      - name: List build output
+        run: ls -l
+
+      - name: Upload sysinfo binary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sysinfo-binary
+          path: ./sysinfo
+          if-no-files-found: error
