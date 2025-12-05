@@ -1,9 +1,8 @@
 name: CI07 - Variables and Context
 
-on: 
-  push:
-  env:
-    GLOBAL_VAR: "Je suis globale"
+on: push
+env:
+  GLOBAL_VAR: "Je suis globale"
 
 jobs:
   variables:
