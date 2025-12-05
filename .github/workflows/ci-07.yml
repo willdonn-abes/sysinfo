@@ -36,3 +36,7 @@ jobs:
         echo "OS: ${{ runner.os }}"
         echo "Architecture: ${{ runner.arch }}"
 
+    - name: Show repo variables & secret
+      run: |
+        echo "SECRET: ${{ secrets.REPO_SECRET }}"
+        echo "VAR: ${{ vars.REPO_VAR }}"
