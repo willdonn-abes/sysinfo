@@ -1,0 +1,17 @@
+name: CI 01 - System Info
+
+on: push
+
+jobs:
+  system-info-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1 - Hostname information
+        run: hostnamectl
+
+      - name: Step 2 - IPv4 addressing
+        run: ip -4 a
+
+      - name: Step 3 - Who am I
+        run: who am i
