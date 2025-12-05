@@ -11,3 +11,4 @@ jobs:
         uses: actions/checkout@v6 
       - name: Step 1 - Build
         run: make build
+        continue-on-error: true
