@@ -1,0 +1,25 @@
+name: CI 09 - Build and Artifact with Attestation
+
+on: push
+
+permissions:
+  id-token: write
+  contents: read
+  attestations: write
+
+jobs:
+  build:
+    name: Compile C sources
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Build C project
+        run: make build
+        
+      - name: Generate build provenance attestation
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: ./sysinfo
