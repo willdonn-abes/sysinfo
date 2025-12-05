@@ -11,10 +11,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Build C project
-        run: make
-
-      - name: List build output
-        run: ls -l
+        run: make build
 
       - name: Upload sysinfo binary artifact
         uses: actions/upload-artifact@v5
