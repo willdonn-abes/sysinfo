@@ -1,4 +1,4 @@
-name: CI 09 - Build and Artifact with Attestation
+name: CI 08 Bis - Build and Artifact with Attestation
 
 on: push
 

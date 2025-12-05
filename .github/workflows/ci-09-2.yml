@@ -1,0 +1,28 @@
+name: CI 09.2 - Release Deployment
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build-and-release:
+    name: Build & Publish Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Build C project
+        run: make build
+
+      - name: Upload Release on GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./sysinfo
+          draft: false
